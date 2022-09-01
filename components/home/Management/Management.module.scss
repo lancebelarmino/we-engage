@@ -1,0 +1,144 @@
+@use 'scss/styles' as *;
+
+.section {
+  position: relative;
+  padding: 7.5rem 0;
+
+  @include breakpoint-down(tablet) {
+    padding: 5rem 2.5rem;
+  }
+
+  @include breakpoint-down(mobile) {
+    padding: 3.75rem 1.5rem;
+  }
+}
+
+.wrapper {
+  padding-top: 11.25rem;
+
+  @include breakpoint-down(mobile) {
+    padding-top: 8.75rem;
+  }
+}
+
+.header {
+  z-index: 999;
+  position: absolute;
+  top: 120px;
+  left: 0;
+  width: 560px;
+  padding: 1.75rem 2.5rem;
+  background: color(neutral, 2);
+  border-radius: 0 2.5rem 2.5rem 0;
+  box-shadow: box-shadow(card, default);
+
+  @include breakpoint-down(tablet) {
+    top: 80px;
+    width: unset;
+    max-width: 100%;
+    padding: 1.75rem;
+  }
+
+  @include breakpoint-down(mobile) {
+    top: 60px;
+  }
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5rem;
+
+  @include breakpoint-down(mobile) {
+    gap: 0.75rem;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 540px;
+
+  // :global(.swiper-pagination) {
+  //   padding-right: 2.5rem;
+  //   text-align: right;
+  // }
+}
+
+.swiperSlide {
+  width: auto;
+  height: auto;
+  border-radius: 40px;
+}
+
+.swiperBullet {
+  background: none;
+  opacity: 1;
+  border: 1px solid color(primary, 3);
+  border-radius: 20px;
+}
+
+.swiperBulletActive {
+  opacity: 1;
+  background: color(primary, 3);
+  border: none;
+}
+
+.servicesCard {
+  width: 380px;
+  height: 480px;
+}
+
+.servicesCardWrapper {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.servicesImg {
+  width: 100%;
+}
+
+.servicesBtn {
+  text-decoration: underline;
+}
+
+.servicesCta {
+  width: 80%;
+
+  @include breakpoint-down(tablet) {
+    width: 100%;
+  }
+}
+
+.servicesCtaTitle {
+  margin-bottom: 1.5rem;
+}
+
+.servicesCtaBtnWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  @include breakpoint-down(tablet) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.servicesCtaBtn {
+  display: block;
+  max-width: 90%;
+
+  &:hover {
+    max-width: 100%;
+  }
+}
+
+.elem1 {
+  z-index: -1;
+  position: absolute;
+  top: -60px;
+  left: -240px;
+}

@@ -1,0 +1,89 @@
+@use 'scss/styles' as *;
+
+.section {
+  position: relative;
+  padding: 7.5rem 3.75rem;
+  overflow: hidden;
+
+  @include breakpoint-down(tablet) {
+    padding: 5rem 2.5rem;
+  }
+
+  @include breakpoint-down(mobile) {
+    padding: 1.25rem 1.5rem 3.75rem 1.5rem;
+  }
+}
+
+.card {
+  margin: 0 3.75rem;
+  padding: 3.75rem;
+
+  @include breakpoint-down(tablet) {
+    margin: 0;
+    padding: 2.5rem;
+  }
+
+  @include breakpoint-down(mobile) {
+    padding: 1.75rem;
+  }
+}
+
+.cardWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include breakpoint-down(tablet) {
+    flex-direction: column-reverse;
+  }
+}
+
+.title {
+  margin-bottom: 2.5rem;
+}
+
+.text {
+  &:not(:last-child) {
+    margin-bottom: 1.25rem;
+  }
+
+  &:last-of-type {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.btn {
+  display: block;
+  max-width: 260px;
+
+  &:hover {
+    max-width: 300px;
+  }
+}
+
+.rightCol {
+  @include breakpoint-down(tablet) {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.footerImg {
+  width: 100%;
+}
+
+.elem1 {
+  z-index: -1;
+  position: absolute;
+  top: -100px;
+  left: -208px;
+}
+
+.elem2 {
+  position: absolute;
+  bottom: 40px;
+  right: 45%;
+
+  @include breakpoint-down(tablet) {
+    display: none;
+  }
+}

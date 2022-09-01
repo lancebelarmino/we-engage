@@ -1,0 +1,96 @@
+@use 'scss/styles' as *;
+
+.section {
+  position: relative;
+  padding: 7.5rem 3.75rem;
+
+  @include breakpoint-down(tablet) {
+    padding: 5rem 2.5rem;
+  }
+
+  @include breakpoint-down(mobile) {
+    padding: 1.25rem 1.5rem 3.75rem 1.5rem;
+  }
+}
+
+.card {
+  margin: 0 3.75rem;
+
+  @include breakpoint-down(tablet) {
+    margin: 0;
+  }
+}
+
+.header {
+  padding: 3.75rem;
+  text-align: center;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  text-align: center;
+
+  @include breakpoint-down(tablet) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.projectItem {
+  padding: 6.25rem;
+
+  &:nth-child(1) {
+    border-top-left-radius: 2.5rem;
+    border-right: 1px solid color(neutral, 2);
+    border-bottom: 1px solid color(neutral, 2);
+
+    @include breakpoint-down(tablet) {
+      border-right: none;
+      border-top-right-radius: 2.5rem;
+    }
+  }
+
+  &:nth-child(2) {
+    border-top-right-radius: 2.5rem;
+    border-bottom: 1px solid color(neutral, 2);
+
+    @include breakpoint-down(tablet) {
+      border-top-right-radius: 0;
+    }
+  }
+
+  &:nth-child(3) {
+    border-bottom-left-radius: 2.5rem;
+    border-right: 1px solid color(neutral, 2);
+
+    @include breakpoint-down(tablet) {
+      border-right: none;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &:nth-child(4) {
+    border-bottom-right-radius: 2.5rem;
+    border-right: 1px solid color(neutral, 2);
+
+    @include breakpoint-down(tablet) {
+      border-bottom-left-radius: 2.5rem;
+    }
+  }
+
+  &:hover {
+    background: color(primary, 2);
+    color: color(neutral, 2);
+  }
+}
+
+.elem1 {
+  position: absolute;
+  bottom: 80px;
+  right: 68px;
+
+  @include breakpoint-down(tablet) {
+    display: none;
+  }
+}

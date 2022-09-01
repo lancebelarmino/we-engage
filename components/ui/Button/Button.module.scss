@@ -1,0 +1,40 @@
+@use 'scss/styles' as *;
+
+.default {
+  @include font-size(t-s);
+  display: inline-block;
+  position: relative;
+  padding: 0.75rem 3rem 0.75rem 1.5rem;
+  color: color(neutral, 2);
+  border: none;
+  border-radius: 80px;
+  transition: transition(button);
+  text-align: left;
+
+  &:hover {
+    color: color(neutral, 2);
+  }
+}
+
+.blue {
+  background-color: color(primary, 1);
+}
+
+.orange {
+  background: color(primary, 2);
+}
+
+.btnArrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+
+.unstyled {
+  padding: 0;
+  color: color(neutral, 1);
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}

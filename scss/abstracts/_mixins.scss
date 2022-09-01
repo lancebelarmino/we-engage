@@ -1,0 +1,35 @@
+@use './functions' as *;
+@use './variables' as *;
+
+// ----------------------------------------
+// MIXINS
+// ----------------------------------------
+
+// FONT-SIZE + LINE-HEIGHT
+// ------------------------------
+// Usage - @include font-size(h1)
+//
+@mixin font-size($elem) {
+	font-size: font-size($elem);
+	line-height: line-height($elem);
+}
+
+// BREAKPOINTS MIN
+// ------------------------------
+// Usage - @include breakpoint-up(desktop)
+//
+@mixin breakpoint-up($size) {
+	@media (min-width: map-get($breakpoints-up, $size)) {
+		@content;
+	}
+}
+
+// BREAKPOINTS MAX
+// ------------------------------
+// Usage - @include breakpoint-down(tablet)
+//
+@mixin breakpoint-down($size) {
+	@media (max-width: map-get($breakpoints-down, $size)) {
+		@content;
+	}
+}

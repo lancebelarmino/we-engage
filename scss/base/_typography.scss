@@ -1,0 +1,73 @@
+@use './index' as *;
+
+/*
+  =============================
+  TYPOGRAPHY
+  =============================
+*/
+
+@font-face {
+  font-family: 'Argentum Sans';
+  src: url('../../public/assets/font/ArgentumSans-Regular.woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Argentum Sans';
+  src: url('../../public/assets/font/ArgentumSans-Bold.woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Argentum Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: color(neutral, 1);
+  font-family: font-family(heading);
+  font-weight: font-weight(medium);
+}
+
+h1 {
+  @include font-size(h1);
+}
+
+h2 {
+  @include font-size(h2);
+}
+
+h3 {
+  @include font-size(h3);
+}
+
+h4 {
+  @include font-size(h4);
+}
+
+h5 {
+  @include font-size(h5);
+}
+
+h6 {
+  @include font-size(h6);
+}
+
+p {
+  @include font-size(t-r);
+
+  color: color(neutral, 1);
+  font-family: font-family(body);
+  font-weight: font-weight(regular);
+}
+
+a {
+  color: color(neutral, 1);
+  font-weight: font-weight(regular);
+}

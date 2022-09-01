@@ -1,0 +1,7 @@
+@use 'scss/styles' as *;
+
+.main {
+  @include breakpoint-down(tablet) {
+    overflow-x: hidden;
+  }
+}

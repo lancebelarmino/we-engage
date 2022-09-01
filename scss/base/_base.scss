@@ -1,0 +1,52 @@
+@use './index' as *;
+
+/*
+  =============================
+  BASE
+  =============================
+*/
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background: url(../../public/assets/png/gradient-bg.png) no-repeat top center;
+  background-size: cover;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: transition(button);
+
+  &:hover {
+    color: color(neutral, 1);
+  }
+}
+
+.swiper-pagination {
+  text-align: right;
+}

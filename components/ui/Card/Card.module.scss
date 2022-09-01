@@ -1,0 +1,8 @@
+@use 'scss/styles' as *;
+
+.card {
+  // background: color(gradient, 1);
+  border: 1px solid color(neutral, 2);
+  border-radius: 2.5rem;
+  background: color(gradient, 1);
+}

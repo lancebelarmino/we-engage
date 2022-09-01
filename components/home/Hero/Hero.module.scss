@@ -1,0 +1,103 @@
+@use 'scss/styles' as *;
+
+.section {
+  position: relative;
+  padding: 3.75rem 3.75rem 7.5rem 3.75rem;
+
+  @include breakpoint-down(tablet) {
+    padding: 5rem 2.5rem;
+  }
+
+  @include breakpoint-down(mobile) {
+    padding: 1.25rem 1.5rem 3.75rem 1.5rem;
+  }
+}
+
+.card {
+  margin: 0 3.75rem;
+  padding: 3.75rem;
+
+  @include breakpoint-down(tablet) {
+    margin: 0;
+    padding: 1.75rem;
+  }
+}
+
+.cardWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+
+  @include breakpoint-down(tablet) {
+    flex-direction: column-reverse;
+  }
+}
+
+.cardLeftCol {
+  width: 55%;
+
+  @include breakpoint-down(tablet) {
+    width: 100%;
+  }
+}
+
+.cardRightCol {
+  width: 45%;
+
+  @include breakpoint-down(tablet) {
+    width: 100%;
+  }
+}
+
+.heroImg {
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 2.5rem;
+}
+
+.text {
+  &:not(:last-child) {
+    margin-bottom: 1.25rem;
+  }
+
+  &:last-of-type {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.btn {
+  display: block;
+  max-width: 240px;
+
+  &:hover {
+    max-width: 280px;
+  }
+
+  @include breakpoint-down(mobile) {
+    max-width: 100%;
+
+    &:hover {
+      max-width: 100%;
+    }
+  }
+}
+
+.elem1 {
+  z-index: -1;
+  position: absolute;
+  bottom: 60px;
+  right: -100px;
+}
+
+.elem2 {
+  position: absolute;
+  top: 16px;
+  left: 52%;
+
+  @include breakpoint-down(tablet) {
+    display: none;
+  }
+}

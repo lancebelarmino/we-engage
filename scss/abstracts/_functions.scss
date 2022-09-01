@@ -1,0 +1,63 @@
+@use './variables' as *;
+
+//  =============================
+//  FUNCTIONS
+//  =============================
+
+// COLORS
+// ------------------------------
+// Usage - color(primary, 1)
+//
+@function color($elem, $variant) {
+	@return map-get(map-get($color, $elem), $variant);
+}
+
+// FONT-SIZE
+// ------------------------------
+// Usage: font-size(h1, desktop)
+// Note: Used @mixins $font-size
+//
+@function font-size($elem) {
+	@return nth(map-get($font-sizes, $elem), 1);
+}
+
+// LINE-HEIGHT
+// ------------------------------
+// Usage: line-height(h1, desktop)
+// Note: Used @mixins $font-size
+//
+@function line-height($elem) {
+	@return nth(map-get($font-sizes, $elem), 2);
+}
+
+// FONT-FAMILY
+// ------------------------------
+// Usage: font-family(heading)
+//
+@function font-family($elem) {
+	@return unquote(map-get($font-family, $elem));
+}
+
+// FONT-WEIGHT
+// ------------------------------
+// Usage: font-weight(bold)
+//
+@function font-weight($elem) {
+	@return map-get($font-weight, $elem);
+}
+
+// BOX-SHADOW
+// ------------------------------
+// Usage: box-shadow(btn, default)
+//
+@function box-shadow($elem, $variant) {
+	@return unquote(map-get(map-get($shadows, $elem), $variant));
+}
+
+// TRANSITION
+// ------------------------------
+// Usage: transition(text)
+//
+@function transition($elem) {
+	@return unquote(map-get($transition, $elem));
+}

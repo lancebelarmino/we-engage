@@ -1,0 +1,109 @@
+//  =============================
+//  VARIABLES
+//  =============================
+
+// COLOR
+// ------------------------------
+//
+$color: (
+	primary: (
+		1: rgba(157, 186, 214, 1),
+    1.2: rgba(157, 186, 214, 0.2),
+    2: rgba(249, 177, 124, 1),
+    3: rgba(178, 117, 227, 1),
+ 	),
+
+  neutral: (
+    1: rgba(39, 38, 40, 1),
+    1-hover: rgba(39, 38, 40, 0.6),
+    2: rgba(255, 255, 255, 1),
+    2.2: rgba(255, 255, 255, 0.2),
+  ),
+
+  gradient: (
+    1: linear-gradient(251deg, #FFFFFF4D 0%, #F0F0F04D 100%),
+  )
+);
+
+// FONT-FAMILY
+// ------------------------------
+//
+$font-family: (
+	heading:    '"Argentum Sans", serif',  // H1 - H6
+  subheading: '"Argentum Sans", serif',  // .subheading
+  body:       '"Argentum Sans", serif' , // .features-text, etc.
+  button:     '"Argentum Sans", serif'   // .btn
+);
+
+// FONT-SIZE, LINE-HEIGHT
+// ------------------------------
+//
+$font-sizes: (
+  h1:   ( clamp(2.5rem, 2.63vw + 1.84rem, 5rem), 1.2),    // H1
+  h2:   ( clamp(1.75rem, 0.53vw + 1.62rem, 2.25rem), 1.2),   // H2
+  h3:   ( clamp(1.5rem, 0.26vw + 1.43rem, 1.75rem), 1.2), // H3
+  h4:   ( clamp(1.25rem, 0.26vw + 1.18rem, 1.5rem), 1.2), // H4
+  h5:   ( clamp(1.25rem, 0vw + 1.25rem, 1.25rem), 1.8),   // H5
+  h6:   ( clamp(1.13rem, 0vw + 1.13rem, 1.13rem), 1.8),   // H6
+  t-s:  ( clamp(0.88rem, 0.13vw + 0.84rem, 1rem), 1.8),   // Text Small
+  t-r:  ( clamp(1rem, 0.26vw + 0.93rem, 1.25rem), 1.8),   // Text Regular
+  t-l:  ( clamp(1rem, 0.13vw + 0.97rem, 1.13rem), 1.8)    // Text Large
+);
+
+// FONT-WEIGHT
+// ------------------------------
+//
+$font-weight: (
+  regular:  400,
+  medium:   500,
+);
+
+// SHADOW
+// ------------------------------
+//
+$shadows: (
+  button: (
+    default:  '0px 10px 24px 2px rgba(30, 144, 254, 0.2)',
+    hover:    '0px 10px 40px 2px rgba(30, 144, 254, 0.4)',
+  ),
+
+  card: (
+    default:  '0px 3px 6px rgba(128, 128, 128, 0.2)',
+  ),
+
+  menu: (
+    default: '0px 16px 24px 2px rgba(0, 0, 0, 0.12)'
+  )
+);
+
+// TRANSITION
+// ------------------------------
+//
+$transition: (
+  text:   'color 200ms ease',
+  button: 'all 200ms ease',
+  icon: 'fill 200ms ease',
+  card: 'box-shadow 200ms ease'
+);
+
+// BREAKPOINTS MIN
+// ------------------------------
+//
+$breakpoints-up: (
+  mobile:       "320px",
+  tablet:       "768px",
+  tablet-wide:  "1024px",
+  desktop:      "1366px",
+  desktop-wide: "1720px"
+);
+
+// BREAKPOINTS MAX
+// ------------------------------
+//
+$breakpoints-down: (
+  desktop-wide: "1920px",
+  desktop:      "1719px",
+  tablet-wide:  "1365px",
+  tablet:       "1023px",
+  mobile:       "767px"
+);

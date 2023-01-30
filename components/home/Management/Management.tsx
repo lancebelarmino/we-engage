@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
 import { motion } from 'framer-motion';
@@ -12,14 +12,60 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import styles from './Management.module.scss';
 
+interface Audios {
+  [key: string]: {
+    status: null | string;
+  };
+}
+
+const defaultAudios = {
+  marnie: {
+    status: null,
+  },
+  v: {
+    status: null,
+  },
+}
+
 const Management = () => {
   const [activeService, setActiveService] = useState<string | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [audioPlayer, setAudioPlayer] = useState<HTMLAudioElement | null>(null);
+  const [audios, setAudios] = useState<Audios>(defaultAudios);
+  const [activeAudio, setActiveAudio] = useState<string | null>(null);
 
   const isCardOpen = activeService !== null;
 
   const activeServiceData = managementServices.filter((item) => activeService === item.id);
   const totalNumberOfSlides = 5;
+
+  // Events
+  const onPlayHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const voiceChatModerator = event.currentTarget.id;
+
+    switch (audios[voiceChatModerator].status) {
+      case 'playing':
+        audioPlayer?.pause();
+        setAudios((prevData) => ({ ...prevData, [voiceChatModerator]: { status: 'paused' } }));
+        break;
+      case 'paused':
+        audioPlayer?.play();
+        setAudios((prevData) => ({ ...prevData, [voiceChatModerator]: { status: 'playing' } }));
+        break;
+      case null:
+        audioPlayer?.setAttribute('src', `https://f004.backblazeb2.com/file/LBClients/vc-${voiceChatModerator}.mp3`);
+        audioPlayer?.load();
+        audioPlayer?.play();
+        setAudios((prevData) => ({ ...prevData, [voiceChatModerator]: { status: 'playing' } }));
+        break;
+      default:
+        break;
+    }
+
+    if (activeAudio !== voiceChatModerator) {
+      setActiveAudio(voiceChatModerator);
+    }
+  };
 
   const servicesList = managementServices.map((item) => (
     <SwiperSlide key={item.title} className={styles.swiperSlide}>
@@ -37,6 +83,10 @@ const Management = () => {
       </Card>
     </SwiperSlide>
   ));
+
+  useEffect(() => {
+    setAudioPlayer(new Audio());
+  }, []);
 
   return (
     <section id="management" className={styles.section}>
@@ -56,11 +106,16 @@ const Management = () => {
                 <div className={styles.servicesCta}>
                   <p className={styles.servicesCtaTitle}>Choose your host</p>
                   <div className={styles.servicesCtaBtnWrapper}>
-                    <Button className={styles.servicesCtaBtn} color="orange">
+                    <Button id="marnie" className={styles.servicesCtaBtn} onClick={onPlayHandler} {...(activeAudio === 'marnie' && {
+                      color: 'orange'
+                    })}>
                       V1: Marnie
                     </Button>
-                    <Button className={styles.servicesCtaBtn}>V2: Doshtano</Button>
-                    <Button className={styles.servicesCtaBtn}>V3: V</Button>
+                    <Button id="v" className={styles.servicesCtaBtn} onClick={onPlayHandler} {...(activeAudio === 'v' && {
+                      color: 'orange'
+                    })}>
+                      V3: V
+                    </Button>
                   </div>
                 </div>
               )}

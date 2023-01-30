@@ -10,17 +10,11 @@ const Projects = () => {
         </div>
 
         <Card className={styles.project}>
-          <Button className={styles.projectItem} component="a" variant="unstyled" href="#">
-            Project
+          <Button className={styles.projectItem} variant="unstyled" component="a" href="https://t.me/CheemsInuAnnouncement" target="_blank">
+            Cheems Inu Announcement Channel
           </Button>
-          <Button className={styles.projectItem} component="a" variant="unstyled" href="#">
-            Project
-          </Button>
-          <Button className={styles.projectItem} component="a" variant="unstyled" href="#">
-            Project
-          </Button>
-          <Button className={styles.projectItem} component="a" variant="unstyled" href="#">
-            Project
+          <Button className={styles.projectItem} variant="unstyled" component="a" href="https://twitter.com/CheemsInu" target="_blank">
+            Cheems Inu Twitter
           </Button>
         </Card>
       </Card>

@@ -52,7 +52,7 @@ const BrandingDesign = () => {
         {isCardOpen ? (
           <motion.div key="card-list" variants={serviceCardVariant} initial="hidden" animate="visible">
             <ServiceCard data={activeServiceData[0]} onClose={() => setActiveService(null)}>
-              <Button className={styles.servicesCtaBtn}>View Sample</Button>
+              <Button className={styles.servicesCtaBtn} component="a" href="https://t.me/julia_880" target="_blank">Ask for Sample</Button>
             </ServiceCard>
           </motion.div>
         ) : (

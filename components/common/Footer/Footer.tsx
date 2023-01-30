@@ -9,7 +9,7 @@ const Footer = () => {
           <div className={styles.leftCol}>
             <h1 className={styles.title}>Curious for More?</h1>
             <p className={styles.text}>Don’t hesitate to drop us a message. We will be happy to answer.</p>
-            <Button className={styles.btn} component="a" href="#">
+            <Button className={styles.btn} component="a" href="https://t.me/julia_880" target="_blank">
               Let&apos;s Work Together
             </Button>
           </div>

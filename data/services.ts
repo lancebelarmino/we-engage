@@ -53,12 +53,6 @@ export const brandingDesignServices = [
     duties: ['1-2 Logo Set Variations', 'Color Palette', 'Typefaces'],
   },
   {
-    id: 'book',
-    image: './assets/png/bd-book.png',
-    title: 'Brand Book: Branding based on your Project',
-    duties: [],
-  },
-  {
     id: 'publication',
     image: './assets/png/bd-publication.png',
     title: 'Publication Materials (Pubmats)',

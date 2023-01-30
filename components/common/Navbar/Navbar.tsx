@@ -25,7 +25,7 @@ const Navbar = () => {
           </a>
         </li>
         <li className={styles.navItem}>
-          <a className={styles.navLink} href="#footer" onClick={() => setIsBurgerOpen(false)}>
+          <a className={styles.navLink} href="https://t.me/julia_880" target="_blank" rel="noreferrer" onClick={() => setIsBurgerOpen(false)}>
             Contact Us
           </a>
         </li>

@@ -41,9 +41,8 @@
   padding: 6.25rem;
 
   &:nth-child(1) {
-    border-top-left-radius: 2.5rem;
+    border-radius: 2.5rem;
     border-right: 1px solid color(neutral, 2);
-    border-bottom: 1px solid color(neutral, 2);
 
     @include breakpoint-down(tablet) {
       border-right: none;
@@ -52,30 +51,10 @@
   }
 
   &:nth-child(2) {
-    border-top-right-radius: 2.5rem;
-    border-bottom: 1px solid color(neutral, 2);
+    border-radius: 2.5rem;
 
     @include breakpoint-down(tablet) {
       border-top-right-radius: 0;
-    }
-  }
-
-  &:nth-child(3) {
-    border-bottom-left-radius: 2.5rem;
-    border-right: 1px solid color(neutral, 2);
-
-    @include breakpoint-down(tablet) {
-      border-right: none;
-      border-bottom-left-radius: 0;
-    }
-  }
-
-  &:nth-child(4) {
-    border-bottom-right-radius: 2.5rem;
-    border-right: 1px solid color(neutral, 2);
-
-    @include breakpoint-down(tablet) {
-      border-bottom-left-radius: 2.5rem;
     }
   }
 
